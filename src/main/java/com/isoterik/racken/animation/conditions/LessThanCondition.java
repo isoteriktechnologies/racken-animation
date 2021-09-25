@@ -1,9 +1,9 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
 /**
  * A condition that compares two {@link Float}s and evaluates to true only when the first is lesser than the second.
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public class LessThanCondition extends GreaterThanCondition {
     /**

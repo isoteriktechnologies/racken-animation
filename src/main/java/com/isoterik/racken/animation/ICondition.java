@@ -1,4 +1,4 @@
-package io.github.isoteriktech.xgdx.animation;
+package com.isoterik.racken.animation;
 
 /**
  * {@link ICondition}s are used to trigger a {@link Transition}.
@@ -8,7 +8,7 @@ package io.github.isoteriktech.xgdx.animation;
  * An implementation of this interface must define its behavior inside the {@link #test()} method. This method should
  * return true only when the condition is satisfied.
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public interface ICondition {
     /**

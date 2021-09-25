@@ -1,11 +1,11 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
-import io.github.isoteriktech.xgdx.animation.ICondition;
+import com.isoterik.racken.animation.ICondition;
 
 /**
  * A condition that compares two {@link Float}s and evaluates to true only when the first is greater than the second.
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public class GreaterThanCondition implements ICondition {
     /**

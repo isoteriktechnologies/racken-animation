@@ -31,7 +31,7 @@ afterEvaluate {
 
                 pom {
                     name = PUBLISH_ARTIFACT_ID
-                    description = 'An extension of Racken for 2d physics support'
+                    description = 'An animation extension for Racken'
                     url = 'https://github.com/isoteriktechnologies/racken-animation'
 
                     licenses {

@@ -1,15 +1,15 @@
-package io.github.isoteriktech.xgdx.animation;
+package com.isoterik.racken.animation;
 
 import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.utils.Array;
 
 /**
- * A <strong>Transition</strong> is used by {@link Animator} to change state.
- * It uses one or more {@link ICondition}s to determine when the change should happen. A transition will only take effect when all the available {@link ICondition}s
- * are met.
+ * A <strong>Transition</strong> is used to change the state of an {@link Animator}.
+ * It uses one or more {@link ICondition}s to determine when the change should happen.
+ * A transition will only take effect when all the available {@link ICondition}s are satisfied.
  * @param <S> the type of {@link State} that will be transitioned.
  *
- * @author isoteriksoftware
+ * @author imranabdulmalik
  * @see Animator
  * @see ICondition
  * @see State
@@ -146,7 +146,7 @@ public class Transition<S extends State<?>> {
 
     /**
      * Creates a new instance that will transition back to the given transition instance from any state. This is useful for creating bi-directional transitions for
-     * instances that have no valid {@link #from}(ie. it is a transition from any state).
+     * instances that have no valid {@link #from}(i.e. it is a transition from any state).
      * <strong>Note:</strong>
      * <ul>
      *     <li>

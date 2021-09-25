@@ -1,13 +1,13 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
 import com.badlogic.gdx.utils.Array;
-import io.github.isoteriktech.xgdx.animation.ICondition;
+import com.isoterik.racken.animation.ICondition;
 
 /**
  * A condition that evaluates other conditions (child conditions).
  * Base classes must decide what to do with the child conditions.
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public abstract class GroupCondition implements ICondition {
     public Array<ICondition> conditions = new Array<>();

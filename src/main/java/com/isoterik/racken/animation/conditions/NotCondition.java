@@ -1,11 +1,11 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
-import io.github.isoteriktech.xgdx.animation.ICondition;
+import com.isoterik.racken.animation.ICondition;
 
 /**
  * A condition that inverts the evaluated value of another condition.
  *
- * @author isoteriksoftware
+ * @author imranabdulmalik
  */
 public class NotCondition implements ICondition {
     protected ICondition condition;

@@ -1,14 +1,13 @@
-package io.github.isoteriktech.xgdx.animation;
+package com.isoterik.racken.animation;
 
 import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.utils.Array;
-import io.github.isoteriktech.xgdx.Component;
-import io.github.isoteriktech.xgdx.GameObject;
+import com.isoterik.racken.Component;
+import com.isoterik.racken.GameObject;
 
 /**
- * An Animator can be attached to a {@link io.github.isoteriktech.xgdx.GameObject} to coordinate and switch animations
- * automatically using {@link Transition}s. States for {@link io.github.isoteriktech.xgdx.GameObject}s are considered
- * valida animations.
+ * An Animator can be attached to a {@link GameObject} to coordinate and switch animations
+ * automatically using {@link Transition}s. States for type {@link GameObject} are considered valid animations.
  * <p>
  * It uses a {@link AnimationStateMachine} internally to determine the previous animation played, the current animation
  * and the next animation to be played.
@@ -20,7 +19,7 @@ import io.github.isoteriktech.xgdx.GameObject;
  * @see FrameAnimation
  * @see Transition
  *
- * @author isoteriksoftware
+ * @author imranabdulmalik
  */
 public class Animator<S extends State<GameObject>> extends Component {
     protected Array<S> animations;
@@ -31,8 +30,7 @@ public class Animator<S extends State<GameObject>> extends Component {
 
     // This objects holds transitions that were added before the component is attached
     // At that point, no GameObject exists and the StateMachine is uninitialized
-    private final Array<Transition<S>> scheduledTransitions
-            = new Array<>();
+    private final Array<Transition<S>> scheduledTransitions = new Array<>();
 
     /**
      * Creates a new instance given an initial animation and zero or more other animations

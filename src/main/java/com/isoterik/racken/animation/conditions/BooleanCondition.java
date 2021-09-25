@@ -1,13 +1,13 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
-import io.github.isoteriktech.xgdx.animation.ICondition;
+import com.isoterik.racken.animation.ICondition;
 
 /**
  * A condition that evaluates to its current boolean value.
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
-public class BooleanCondition implements ICondition  {
+public class BooleanCondition implements ICondition {
     /**
      * The data source.
      */

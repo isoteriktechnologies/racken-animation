@@ -1,4 +1,4 @@
-package io.github.isoteriktech.xgdx.animation;
+package com.isoterik.racken.animation;
 
 import com.badlogic.gdx.ai.fsm.DefaultStateMachine;
 import com.badlogic.gdx.ai.fsm.State;
@@ -9,7 +9,7 @@ import com.badlogic.gdx.utils.Array;
  * The state machine uses available {@link Transition}s to determine the current state and the next state.
  * <p>
  * Because it is a <strong>finite state machine</strong>, in addition to the global state, this machine can only be in one state at any given time. {@link Transition}s are
- * evaluated from first to last. If more than one {@link Transition} is triggered, the last triggered (in the order added) transition will determine the current state, others are ignored!
+ * evaluated from first to last. If more than one {@link Transition} is triggered, the last triggered transition, in the order added, will determine the current state, others are ignored!
  * <p>
  * This state machine does not allow explicit change of states (except the global and initial state). If you need more control, use {@link DefaultStateMachine} instead.
  * @param <E> the type of the entity handled by this state machine
@@ -18,7 +18,7 @@ import com.badlogic.gdx.utils.Array;
  * @see com.badlogic.gdx.ai.fsm.StateMachine
  * @see Transition
  *
- * @author isoteriksoftware
+ * @author imranabdulmalik
  */
 public class AnimationStateMachine<E, S extends State<E>> extends DefaultStateMachine<E, S> {
     protected Array<Transition<S>> transitions;

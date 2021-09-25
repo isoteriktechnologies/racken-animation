@@ -1,4 +1,4 @@
-package io.github.isoteriktech.xgdx.animation;
+package com.isoterik.racken.animation;
 
 import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.ai.msg.Telegram;
@@ -6,10 +6,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
-import io.github.isoteriktech.xgdx.Component;
-import io.github.isoteriktech.xgdx.GameObject;
-import io.github.isoteriktech.xgdx.XGdx;
-import io.github.isoteriktech.xgdx.x2d.components.renderer.SpriteRenderer;
+import com.isoterik.racken.Component;
+import com.isoterik.racken.GameObject;
+import com.isoterik.racken.Racken;
+import com.isoterik.racken._2d.components.renderer.SpriteRenderer;
 
 /**
  * Useful for animating 2d {@link GameObject}s using a sequence of images (sprites).
@@ -18,7 +18,7 @@ import io.github.isoteriktech.xgdx.x2d.components.renderer.SpriteRenderer;
  *
  * @see Animator
  *
- * @author isoteriksoftware
+ * @author imranabdulmalik
  */
 public class FrameAnimation extends Component implements State<GameObject>  {
     protected final Array<? extends TextureRegion> sprites;
@@ -229,7 +229,7 @@ public class FrameAnimation extends Component implements State<GameObject>  {
          */
         SpriteRenderer sr = go.getComponent(SpriteRenderer.class);
         if (sr != null) {
-            sr.setSprite(updateAnimation(XGdx.instance().getDeltaTime()));
+            sr.setSprite(updateAnimation(Racken.instance().getDeltaTime()));
         }
     }
 

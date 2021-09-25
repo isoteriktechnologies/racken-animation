@@ -1,10 +1,10 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
 /**
  * A condition that compares two objects and evaluates to true only when the objects are not equal.
  * @param <T> the type of object to compare
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public class NotEqualCondition<T> extends EqualCondition<T> {
     /**

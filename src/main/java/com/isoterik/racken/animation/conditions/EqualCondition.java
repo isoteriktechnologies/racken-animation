@@ -1,12 +1,12 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
-import io.github.isoteriktech.xgdx.animation.ICondition;
+import com.isoterik.racken.animation.ICondition;
 
 /**
  * A condition that compares two objects and evaluates to true only when the objects are equal.
  * @param <T> the type of object to compare
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public class EqualCondition<T> implements ICondition {
     /**

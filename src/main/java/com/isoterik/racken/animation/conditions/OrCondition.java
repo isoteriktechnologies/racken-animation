@@ -1,12 +1,12 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
 import com.badlogic.gdx.utils.Array;
-import io.github.isoteriktech.xgdx.animation.ICondition;
+import com.isoterik.racken.animation.ICondition;
 
 /**
  * A condition that evaluates to true if any of its child conditions evaluates to true.
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public class OrCondition extends GroupCondition {
     /**

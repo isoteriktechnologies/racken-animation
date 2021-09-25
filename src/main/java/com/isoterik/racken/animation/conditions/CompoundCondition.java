@@ -1,13 +1,13 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
 import com.badlogic.gdx.utils.Array;
-import io.github.isoteriktech.xgdx.animation.ICondition;
+import com.isoterik.racken.animation.ICondition;
 
 /**
  * A condition that nests other conditions (child conditions) to create a complex condition.
  * @param <T> the type of object that conditions will use for comparisons when required
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public class CompoundCondition<T> extends AndCondition {
     /**

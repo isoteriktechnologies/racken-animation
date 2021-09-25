@@ -1,9 +1,9 @@
-package io.github.isoteriktech.xgdx.animation.conditions;
+package com.isoterik.racken.animation.conditions;
 
 /**
  * A condition for {@link Float}s that nests other conditions (child conditions) to create a complex condition.
  *
- * @author isoterik
+ * @author imranabdulmalik
  */
 public class NumericCompoundCondition extends CompoundCondition<Float> {
     /**
