@@ -3,7 +3,7 @@ package io.github.isoteriktech.xgdx.animation.test.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import io.github.isoteriktech.xgdx.animation.test.XgdxAnimationTest;
+import io.github.isoteriktech.xgdx.animation.test.TestDriver;
 
 public class HtmlLauncher extends GwtApplication {
 
@@ -17,6 +17,6 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public ApplicationListener createApplicationListener () {
-                return new XgdxAnimationTest();
+                return new TestDriver();
         }
 }

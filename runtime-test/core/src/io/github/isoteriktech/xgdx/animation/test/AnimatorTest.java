@@ -1,23 +1,23 @@
 package io.github.isoteriktech.xgdx.animation.test;
 
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
-import io.github.isoteriktech.xgdx.GameObject;
-import io.github.isoteriktech.xgdx.Scene;
-import io.github.isoteriktech.xgdx.animation.Animator;
-import io.github.isoteriktech.xgdx.animation.FrameAnimation;
-import io.github.isoteriktech.xgdx.animation.conditions.BooleanCondition;
-import io.github.isoteriktech.xgdx.animation.conditions.CompoundCondition;
-import io.github.isoteriktech.xgdx.asset.GameAssetsLoader;
-import io.github.isoteriktech.xgdx.input.KeyCodes;
-import io.github.isoteriktech.xgdx.input.KeyTrigger;
+import com.isoterik.racken.GameObject;
+import com.isoterik.racken.Scene;
+import com.isoterik.racken.animation.Animator;
+import com.isoterik.racken.animation.FrameAnimation;
+import com.isoterik.racken.animation.conditions.BooleanCondition;
+import com.isoterik.racken.animation.conditions.CompoundCondition;
+import com.isoterik.racken.asset.GameAssetsLoader;
+import com.isoterik.racken.input.KeyTrigger;
 
 public class AnimatorTest extends Scene {
     public AnimatorTest() {
         setBackgroundColor(Color.BLACK);
 
-        GameAssetsLoader assets = xGdx.assets;
+        GameAssetsLoader assets = racken.assets;
 
         FrameAnimation bunnyStand = new FrameAnimation(new Array<>(new TextureRegion[]{
                 assets.regionForTexture("sprites/bunny_stand.png", true)}), 1f);
@@ -43,18 +43,18 @@ public class AnimatorTest extends Scene {
             .addTransition(bunnyStand, bunnyWalk, true, walkCondition)
             .addTransition(bunnyJump, jumpCondition);
 
-        input.addKeyListener(KeyTrigger.keyDownTrigger(KeyCodes.UP).setPolled(true), (name, evt) -> {
+        input.addKeyListener(KeyTrigger.keyDownTrigger(Input.Keys.UP).setPolled(true), (name, evt) -> {
             jumpCondition.dataSource.set(true);
             standCondition.dataSource.set(false);
         });
-        input.addKeyListener(KeyTrigger.keyUpTrigger(KeyCodes.UP), (name, evt) -> {
+        input.addKeyListener(KeyTrigger.keyUpTrigger(Input.Keys.UP), (name, evt) -> {
             jumpCondition.dataSource.set(false);
             standCondition.dataSource.set(true);
         });
-        input.addKeyListener(KeyTrigger.keyDownTrigger(KeyCodes.RIGHT).setPolled(true), (name, evt) -> {
+        input.addKeyListener(KeyTrigger.keyDownTrigger(Input.Keys.RIGHT).setPolled(true), (name, evt) -> {
             standCondition.dataSource.set(false);
         });
-        input.addKeyListener(KeyTrigger.keyUpTrigger(KeyCodes.RIGHT), (name, evt) -> {
+        input.addKeyListener(KeyTrigger.keyUpTrigger(Input.Keys.RIGHT), (name, evt) -> {
             standCondition.dataSource.set(true);
         });
     }
