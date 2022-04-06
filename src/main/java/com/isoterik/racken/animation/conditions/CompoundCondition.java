@@ -9,11 +9,11 @@ import com.isoterik.racken.animation.ICondition;
  *
  * @author imranabdulmalik
  */
-public class CompoundCondition<T> extends AndCondition {
+public class CompoundCondition<T> extends OrCondition {
     /**
-     * Child conditions that should be ORed
+     * Child conditions that should be ANDed
      */
-    protected OrCondition orConditions;
+    protected AndCondition andConditions;
 
     /**
      * The data source.
@@ -27,8 +27,8 @@ public class CompoundCondition<T> extends AndCondition {
     public CompoundCondition(DataSource<T> dataSource) {
         super(new Array<>());
         this.dataSource = dataSource;
-        orConditions = new OrCondition(new EqualCondition<>(dataSource, dataSource));
-        addCondition(orConditions);
+        andConditions = new AndCondition(new EqualCondition<>(dataSource, dataSource));
+        addCondition(andConditions);
     }
 
     /**
@@ -46,7 +46,7 @@ public class CompoundCondition<T> extends AndCondition {
      * @return this instance for chaining
      */
     public CompoundCondition<T> and(ICondition condition, ICondition... conditions) {
-        addCondition(condition, conditions);
+        andConditions.addCondition(condition, conditions);
         return this;
     }
 
@@ -57,7 +57,7 @@ public class CompoundCondition<T> extends AndCondition {
      * @return this instance for chaining
      */
     public CompoundCondition<T> or(ICondition condition, ICondition... conditions) {
-        orConditions.addCondition(condition, conditions);
+        addCondition(condition, conditions);
         return this;
     }
 

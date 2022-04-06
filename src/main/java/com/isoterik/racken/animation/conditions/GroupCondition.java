@@ -10,7 +10,7 @@ import com.isoterik.racken.animation.ICondition;
  * @author imranabdulmalik
  */
 public abstract class GroupCondition implements ICondition {
-    public Array<ICondition> conditions = new Array<>();
+    protected Array<ICondition> conditions = new Array<>();
 
     /**
      * Creates a new instance given the child conditions to evaluate.

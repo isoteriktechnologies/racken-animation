@@ -10,6 +10,6 @@ public class TestDriver extends GameDriver {
 		racken.assets.enqueueFolderContents("sprites", Texture.class);
 		racken.assets.loadAssetsNow();
 
-		return new FrameAnimationTest();
+		return new AnimatorTest();
 	}
 }
