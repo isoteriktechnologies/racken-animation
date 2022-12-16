@@ -19,13 +19,13 @@ public class AnimatorTest extends Scene {
 
         GameAssetsLoader assets = racken.assets;
 
-        FrameAnimation bunnyStand = new FrameAnimation(new Array<>(new TextureRegion[]{
-                assets.regionForTexture("sprites/bunny_stand.png", true)}), 1f);
-        FrameAnimation bunnyJump = new FrameAnimation(new Array<>(new TextureRegion[]{
-                assets.regionForTexture("sprites/bunny_jump.png", true)}), 1f);
-        FrameAnimation bunnyWalk = new FrameAnimation(new Array<>(new TextureRegion[]{
+        FrameAnimation bunnyStand = new FrameAnimation(1f,
+                assets.regionForTexture("sprites/bunny_stand.png", true));
+        FrameAnimation bunnyJump = new FrameAnimation(1f,
+                assets.regionForTexture("sprites/bunny_jump.png", true));
+        FrameAnimation bunnyWalk = new FrameAnimation(.25f,
                 assets.regionForTexture("sprites/bunny_walk1.png", true),
-                assets.regionForTexture("sprites/bunny_walk2.png", true)}), .25f);
+                assets.regionForTexture("sprites/bunny_walk2.png", true));
 
         Animator<FrameAnimation> animator = new Animator<>(bunnyStand, bunnyJump, bunnyWalk);
 

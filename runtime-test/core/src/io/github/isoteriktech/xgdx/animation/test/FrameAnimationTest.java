@@ -14,7 +14,7 @@ public class FrameAnimationTest extends Scene {
 
         Array<TextureRegion> frames = SpriteUtils.getSpriteSequence("sprites/wingMan", ".png",
                 1, 5, 1);
-        FrameAnimation frameAnimation = new FrameAnimation(frames, .25f);
+        FrameAnimation frameAnimation = new FrameAnimation(.25f, frames);
 
         GameObject wingMan = newSpriteObject(frames.first());
         wingMan.addComponent(frameAnimation);

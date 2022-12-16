@@ -45,11 +45,20 @@ public class FrameAnimation extends Component implements State<GameObject>  {
      * @param sprites array of texture regions
      * @param frameDuration the duration (in seconds) for a single frame of the animation
      */
-    public FrameAnimation(Array<? extends TextureRegion> sprites, float frameDuration) {
+    public FrameAnimation(float frameDuration, Array<? extends TextureRegion> sprites) {
         this.sprites = sprites;
         this.animation = new Animation<>(frameDuration,
                 this.sprites);
         this.animation.setPlayMode(LOOP);
+    }
+
+    /**
+     * Creates a new instance with an array of sprites ({@link TextureRegion}s)
+     * @param sprites array of texture regions
+     * @param frameDuration the duration (in seconds) for a single frame of the animation
+     */
+    public FrameAnimation(float frameDuration, TextureRegion ...sprites) {
+        this(frameDuration, new Array<>(sprites));
     }
 
     /**
@@ -59,9 +68,9 @@ public class FrameAnimation extends Component implements State<GameObject>  {
      * @param cols the number of columns
      * @param frameDuration the duration (in seconds) for a single frame of the animation
      */
-    public FrameAnimation(TextureRegion[][] sprites,
-                          int rows, int cols, float frameDuration)
-    { this(getSpritesFromArray(sprites, rows, cols), frameDuration); }
+    public FrameAnimation(float frameDuration, TextureRegion[][] sprites,
+                          int rows, int cols)
+    { this(frameDuration, getSpritesFromArray(sprites, rows, cols)); }
 
     /**
      * Creates a new instance given a sprite sheet ({@link Texture}). The sprite sheet will be split to get the frames of the animation.
@@ -72,7 +81,7 @@ public class FrameAnimation extends Component implements State<GameObject>  {
      */
     public FrameAnimation(Texture spriteSheet, int rows, int cols,
                           float frameDuration)
-    { this(splitSpriteSheet(spriteSheet, rows, cols), rows, cols, frameDuration); }
+    { this(frameDuration, splitSpriteSheet(spriteSheet, rows, cols), rows, cols); }
 
     /**
      * Sets the animation play mode
@@ -200,7 +209,7 @@ public class FrameAnimation extends Component implements State<GameObject>  {
     { return sprites; }
 
     /**
-     * Sets the the duration (in seconds) for a single frame of the animation
+     * Sets the duration (in seconds) for a single frame of the animation
      * @param frameDuration the duration (in seconds) for a single frame of the animation
      */
     public void setFrameDuration(float frameDuration)

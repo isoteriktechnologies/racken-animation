@@ -31,7 +31,7 @@ allprojects {
         aiVersion = '1.8.2'
         gdxControllersVersion = '2.1.0'
         animationVersion = '1.0.0'
-        rackenVersion = '1.0.0-beta.3'
+        rackenVersion = '1.0.0'
     }
 
     repositories {
