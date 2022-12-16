@@ -23,7 +23,7 @@ public interface ICondition {
      *
      * @param <T> the type of object to reference
      *
-     * @author isoterik
+     * @author imranabdulmalik
      */
     class DataSource<T> {
         /**

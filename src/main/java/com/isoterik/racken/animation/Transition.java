@@ -120,7 +120,7 @@ public class Transition<S extends State<?>> {
     }
 
     /**
-     * Creates a new instance capable of doing the exact opposite of what the current instance does. This is useful for creating bi-directional transitions.
+     * Creates a new instance capable of doing the exact opposite of what the current instance does. This is useful for creating bidirectional transitions.
      * For example: if this instance represents a transition from <em>StateA</em> to <em>StateB</em>, calling this method returns a new instance that transition from StateB back to StateA.
      *
      * <strong>Note:</strong>
@@ -145,7 +145,7 @@ public class Transition<S extends State<?>> {
     }
 
     /**
-     * Creates a new instance that will transition back to the given transition instance from any state. This is useful for creating bi-directional transitions for
+     * Creates a new instance that will transition back to the given transition instance from any state. This is useful for creating bidirectional transitions for
      * instances that have no valid {@link #from}(i.e. it is a transition from any state).
      * <strong>Note:</strong>
      * <ul>

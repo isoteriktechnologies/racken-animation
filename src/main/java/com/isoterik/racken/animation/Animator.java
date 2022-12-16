@@ -9,7 +9,7 @@ import com.isoterik.racken.GameObject;
  * An Animator can be attached to a {@link GameObject} to coordinate and switch animations
  * automatically using {@link Transition}s. States for type {@link GameObject} are considered valid animations.
  * <p>
- * It uses a {@link AnimationStateMachine} internally to determine the previous animation played, the current animation
+ * It uses an {@link AnimationStateMachine} internally to determine the previous animation played, the current animation
  * and the next animation to be played.
  * States (animations) cannot be changed directly. To change state (animation), the animator uses {@link Transition}s.
  *
@@ -275,7 +275,7 @@ public class Animator<S extends State<GameObject>> extends Component {
      */
     public Array<Transition<S>> getTransitions() {
 		/*
-		If the state machine is not initialized yet it means this instance is not attached so we simply return the scheduled transitions.
+		If the state machine is not initialized yet, it means this instance is not attached, so we simply return the scheduled transitions.
 		 */
         if (stateMachine != null)
             return stateMachine.getTransitions();
