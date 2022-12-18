@@ -165,14 +165,14 @@ public class AnimationStateMachine<E, S extends IAnimationState<E>> extends Defa
 
                 previousState = currentState;
                 currentState = transition.to;
+
+                if (currentState != null && currentState.shouldReset())
+                    currentState.reset();
             }
         }
 
         // Update the current state if any
         if (currentState != null) {
-            if (currentState.shouldReset())
-                currentState.reset();
-
             currentState.update(owner);
         }
     }
