@@ -1,7 +1,6 @@
 package com.isoterik.racken.animation;
 
 import com.badlogic.gdx.ai.fsm.DefaultStateMachine;
-import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.utils.Array;
 
 /**
@@ -20,7 +19,7 @@ import com.badlogic.gdx.utils.Array;
  *
  * @author imranabdulmalik
  */
-public class AnimationStateMachine<E, S extends State<E>> extends DefaultStateMachine<E, S> {
+public class AnimationStateMachine<E, S extends IAnimationState<E>> extends DefaultStateMachine<E, S> {
     protected Array<Transition<S>> transitions;
 
     /**
@@ -170,8 +169,12 @@ public class AnimationStateMachine<E, S extends State<E>> extends DefaultStateMa
         }
 
         // Update the current state if any
-        if (currentState != null)
+        if (currentState != null) {
+            if (currentState.shouldReset())
+                currentState.reset();
+
             currentState.update(owner);
+        }
     }
 
     /**

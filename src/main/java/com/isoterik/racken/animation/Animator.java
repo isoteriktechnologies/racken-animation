@@ -1,6 +1,5 @@
 package com.isoterik.racken.animation;
 
-import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.utils.Array;
 import com.isoterik.racken.Component;
 import com.isoterik.racken.GameObject;
@@ -21,7 +20,7 @@ import com.isoterik.racken.GameObject;
  *
  * @author imranabdulmalik
  */
-public class Animator<S extends State<GameObject>> extends Component {
+public class Animator<S extends IAnimationState<GameObject>> extends Component {
     protected Array<S> animations;
 
     protected AnimationStateMachine<GameObject, S> stateMachine;

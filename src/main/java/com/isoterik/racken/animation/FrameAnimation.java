@@ -1,6 +1,5 @@
 package com.isoterik.racken.animation;
 
-import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.ai.msg.Telegram;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -20,12 +19,13 @@ import com.isoterik.racken._2d.components.renderer.SpriteRenderer;
  *
  * @author imranabdulmalik
  */
-public class FrameAnimation extends Component implements State<GameObject>  {
+public class FrameAnimation extends Component implements IAnimationState<GameObject>  {
     protected final Array<? extends TextureRegion> sprites;
 
     protected final Animation<? extends TextureRegion> animation;
 
     protected float stateTime;
+    private boolean shouldReset = true;
 
     public static final Animation.PlayMode NORMAL =
             Animation.PlayMode.NORMAL;
@@ -163,6 +163,21 @@ public class FrameAnimation extends Component implements State<GameObject>  {
      */
     public void reset()
     { setStateTime(0); }
+
+    /**
+     * @return whether the animation should be reset during transition
+     */
+    public boolean shouldReset() {
+        return shouldReset;
+    }
+
+    /**
+     * Sets whether the animation should be reset during transition
+     * @param shouldReset whether the animation should be reset during transition
+     */
+    public void setShouldReset(boolean shouldReset) {
+        this.shouldReset = shouldReset;
+    }
 
     /**
      *
